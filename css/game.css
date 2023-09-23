@@ -1,0 +1,99 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../Imagens/Bill\ statue\ IPhone\ background.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.7);
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 8px;
+}
+
+.grid{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; /*Dividindo as cartas em 3 colunas iguais */
+    gap: 7px; /*Espaço entre as cartas*/
+    width: 100%; /*Oculpar toda a tela*/
+    max-width: 800px;
+    margin: 0 auto; /*centraliza as margens*/
+}
+
+.card{
+    aspect-ratio: 3/4; /*Definicao da proporcao das cartas*/
+    width: 100%;
+    border-radius: 8px; /*borda para as cartas*/
+    position: relative; /*delimitando o espaço das cartas*/
+    transition: all 400ms ease; /*tempo e suavidade da transicao*/
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*deixando uma carta sob a outra*/
+    background-size: cover; /*deixando a imagem do tamanho da carta*/
+    background-position: center; /*centralizando*/
+    border: 2px solid rgb(255, 123, 0); /*borda da carta*/
+    border-radius: 8px; /*borda para as cartas*/
+    transition: all 400ms ease; /*transicao de cor quando acerta a carta*/ 
+}
+
+.frente{
+    
+    transform: rotateY(180deg); /*rodando a imagem para n ficar invertida*/
+}
+
+.atras{
+    background-image: url('../Imagens/carta-back.webp'); /*Imagem da carta*/
+    backface-visibility: hidden; /*escondendo a parte de tras da carta quando ela e girada*/
+}
+
+.revelar-card{
+    transform: rotateY(180deg);
+}
+
+
+.desabilitar-carta {
+    filter: saturate(0);
+    opacity: 0.5;
+}
+
+@media (min-width: 1024px) { /*deixando o site responsivo para pc*/
+    main{
+        background-image: url(../Imagens/852216.jpg);
+        
+    }
+    .grid {
+        margin: 20px auto; /* Margem maior no centro da tela */
+        gap: 15px; /* Espaço maior entre as cartas */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
+
+@media (min-width: 767px) { /*deixando o site responsivo para pc*/
+    main{
+        background-image: url(../Imagens/852216.jpg);
+        
+    }
+    .grid {
+        margin: 20px auto; /* Margem maior no centro da tela */
+        gap: 15px; /* Espaço maior entre as cartas */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
